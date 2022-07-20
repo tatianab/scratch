@@ -59,6 +59,24 @@ body:
       render: markdown
     validations:
       required: true
+  - type: dropdown
+    id: has-cve
+    attributes:
+      label: Does this vulnerability already have a CVE ID?
+      multiple: false
+      options:
+      - Yes
+      - No
+      - "Don't know"
+    validations:
+      required: true
+  - type: input
+    id: cve
+    attributes:
+      label: CVE ID
+      description: The CVE ID for this vulnerability. Leave blank if none exists.
+    validations:
+      required: false
  
 #  - type: textarea
 #    id: symbols
