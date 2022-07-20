@@ -1,7 +1,7 @@
 name: Request to add a public Go vulnerability the vulndb database
 description: |
-  Report existing, public vulnerabilities in public importable packages in the Go ecosystem. 
-  For all other vulnerabilities, please follow our [security policy](https://go.dev/security).
+  Use this form to report existing, public vulnerabilities in public importable packages 
+  in the Go ecosystem. 
 title: "x/vulndb: potential Go vuln in <package>"
 body:
   - type: input
@@ -17,6 +17,21 @@ body:
     attributes:
       label: Module
       description: The Go module this vulnerability affects.
-      placeholder: https://github.com/example
+      placeholder: github.com/example/module
+    validations:
+      required: true
+  - type: input
+    id: package
+    attributes:
+      label: Package
+      description: The Go package this vulnerability affects. Leave blank if same as module.
+      placeholder: github.com/example/module/package
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A description of the vulnerability.
     validations:
       required: true
