@@ -1,5 +1,5 @@
 name: Suggest an edit to an existing report
-title: "x/vulndb: suggested edit to <GO-XXXX-YYYY>"
+title: "x/vulndb: suggestion regarding <GO-XXXX-YYYY>"
 description: Let us know about missing or incorrect information in a vulndb report.
 labels: "Needs Triage,Suggested Edit"
 body:
@@ -18,7 +18,6 @@ body:
     id: report
     attributes:
       label: Report ID
-      description: The ID for the report you are suggesting an edit for.
       placeholder: GO-XXXX-YYYY
     validations:
       required: true
