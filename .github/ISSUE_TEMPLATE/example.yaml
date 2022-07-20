@@ -56,12 +56,13 @@ body:
         
                 
         Example:
-        \`
+        \`\`\`
           Package: github.com/example/module/package
           - Introduced: 1.2.0
           - Fixed: 1.2.4
           Package: github.com/example/module/v2/package
           - Fixed: 2.4.5
+       \`\`\`
       value: |
         Package:
         - Introduced: 
