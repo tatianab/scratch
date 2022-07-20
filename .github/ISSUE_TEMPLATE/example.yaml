@@ -1,10 +1,8 @@
 name: Request to add a public Go vulnerability the vulndb database
 description: |
-  Use this form to report existing, publicly disclosed vulnerabilities 
-  in public importable packages in the external Go ecosystem. 
-  
-  For non-disclosed vulnerabilities, 
-  please read our [security policy](https://go.dev/security).
+  Report existing, public vulnerabilities in public importable packages in the Go ecosystem.
+
+  For non-disclosed vulnerabilities, please follow our [security policy](https://go.dev/security).
 title: "x/vulndb: potential Go vuln in <package>"
 body:
   - type: input
