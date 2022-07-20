@@ -87,6 +87,13 @@ body:
       label: Credit
       description: |
         [Optional] The name of the person or organization that discovered or fixed this vulnerability.
+  - type: input
+    id: cwe
+    attributes:
+      label: CWE ID
+      description: |
+        [Optional] The CWE ID that best describes the class of vulnerability. 
+        See https://cwe.mitre.org/data/definitions/699.html for a list of common types.
   - type: textarea
     id: links
     attributes:
