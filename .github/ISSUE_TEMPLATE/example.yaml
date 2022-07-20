@@ -65,9 +65,9 @@ body:
       label: Does this vulnerability already have a CVE ID?
       multiple: false
       options:
-      - Yes
-      - No
-      - "Don't know"
+      - "Yes"
+      - "No"
+      - "Unknown"
     validations:
       required: true
   - type: input
@@ -75,6 +75,7 @@ body:
     attributes:
       label: CVE ID
       description: The CVE ID for this vulnerability. Leave blank if none exists.
+      placeholder: CVE-20XX-NNNN
     validations:
       required: false
  
