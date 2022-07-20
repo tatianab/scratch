@@ -1,8 +1,9 @@
-name: Request to add a public Go vulnerability the vulndb database
+name: Tell us about a public vulnerability in the Go Ecosystem
 description: |
   Use this form to report existing, public vulnerabilities in public importable packages 
   in the Go ecosystem. 
 title: "x/vulndb: potential Go vuln in <package>"
+labels: [Needs Triage], [Direct External Report]
 body:
   - type: input
     id: contact
@@ -15,16 +16,16 @@ body:
   - type: input
     id: module
     attributes:
-      label: Module
-      description: The Go module this vulnerability affects.
+      label: Module(s)
+      description: The Go module(s) this vulnerability affects, separated by commas.
       placeholder: github.com/example/module
     validations:
       required: true
   - type: input
     id: package
     attributes:
-      label: Package
-      description: The Go package this vulnerability affects. Leave blank if same as module.
+      label: Package(s)
+      description: The Go package(s) this vulnerability affects, separated by commas. Leave blank if same as module.
       placeholder: github.com/example/module/package
     validations:
       required: false
@@ -40,10 +41,19 @@ body:
     attributes:
       label: Affected Versions
       description: |
-        The package versions (in semver format) affected by this vulnerability.
-      placeholder: |
-        - Introduced: 1.1.0
-          Fixed: 1.8.5
+        The package versions (in semver format) affected by this vulnerability. 
+        If the vulnerability has always existed, leave the "Introduced" field blank.
+        
+        Example:
+          Package: github.com/example/module/package
+          - Introduced: 1.2.0
+          - Fixed: 1.2.4
+          Package: github.com/example/module/v2/package
+          - Fixed: 2.4.5
+      value: |
+        Package:
+        - Introduced: 
+        - Fixed: 
       render: markdown
     validations:
       required: true
@@ -53,16 +63,23 @@ body:
       label: Affected Symbols
       description: |
         The symbols (function or struct names) affected by this vulnerability.
+        
+        Example:
+          Package: github.com/example/module/package
+          - aSymbol
+          - SomeType.AMethod
+          Package: github.com/example/module/v2/package
+          - anotherSymbol
       placeholder: |
         - AFunction
-        - aType.AMethod
+        - SomeType.AMethod
       render: markdown
     validations:
       required: true
   - type: dropdown
     id: has-cve
     attributes:
-      label: Does this vulnerability already have a CVE ID?
+      label: Does this vulnerability already have an associated CVE ID?
       description: |
         A CVE IDs is a unique identifier for a vulnerability (see https://cve.mitre.org). 
         The Go Security team will assign a CVE ID for the vulnerability if it does not already have one.
