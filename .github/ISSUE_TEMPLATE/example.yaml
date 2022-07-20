@@ -52,19 +52,13 @@ body:
       label: Affected Versions
       description: |
         The package versions (in semver format) affected by this vulnerability. 
-        If the vulnerability has always existed in a package, leave the Introduced field blank.
-        
-        Example:
-        \`\`\`
-          Package: github.com/example/module/package
+        Indicate when the vulnerability was introduced and when it was fixed, if known.
+      placeholder: |
+        Package: github.com/example/module/package
           - Introduced: 1.2.0
           - Fixed: 1.2.4
-          Package: github.com/example/module/v2/package
-          - Fixed: 2.4.5\`\`\`
-      value: |
-        Package:
-        - Introduced: 
-        - Fixed: 
+        Package: github.com/example/module/v2/package
+          - Fixed: 2.4.5
       render: shell
     validations:
       required: true
@@ -74,17 +68,12 @@ body:
       label: Affected Symbols
       description: |
         The symbols (function or struct names) affected by this vulnerability.
-        
-        Example:
+      placeholder: |
         Package: github.com/example/module/package
-        - aFunction
-        - SomeType.AMethod
+          - aFunction
+          - SomeType.AMethod
         Package: github.com/example/module/v2/package
-        - anotherFunction
-      value: |
-        Package:
-          - 
-          - 
+          - anotherFunction
       render: shell
     validations:
       required: true
