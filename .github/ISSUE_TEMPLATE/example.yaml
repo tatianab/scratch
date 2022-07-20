@@ -55,8 +55,18 @@ body:
     attributes:
       label: Affected Versions
       description: |
-        The package versions (in semver format) affected by this vulnerability. 
+        "The package versions (in semver format) affected by this vulnerability. 
         If the vulnerability has always existed in a package, leave the Introduced field blank.
+        
+                
+        Example:
+        ```
+          Package: github.com/example/module/package
+          - Introduced: 1.2.0
+          - Fixed: 1.2.4
+          Package: github.com/example/module/v2/package
+          - Fixed: 2.4.5
+       ```"
       value: |
         Package:
         - Introduced: 
@@ -69,16 +79,16 @@ body:
     attributes:
       label: Affected Symbols
       description: |
-        The symbols (function or struct names) affected by this vulnerability.
+        "The symbols (function or struct names) affected by this vulnerability.
         
         Example:
         ```
         Package: github.com/example/module/package
-        - aSymbol
+        - aFunction
         - SomeType.AMethod
         Package: github.com/example/module/v2/package
-        - anotherSymbol
-       ```
+        - anotherFunction
+       ```"
       value: |
         Package:
           - 
