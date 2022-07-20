@@ -3,7 +3,7 @@ description: |
   Use this form to report existing, public vulnerabilities in public importable packages 
   in the Go ecosystem. 
 title: "x/vulndb: potential Go vuln in <package>"
-labels: [Needs Triage], [Direct External Report]
+labels: "Needs Triage,Direct External Report"
 body:
   - type: input
     id: contact
