@@ -1,7 +1,6 @@
 name: Tell us about a public vulnerability in the Go Ecosystem
 description: |
-  Report existing, public vulnerabilities in public importable packages 
-  in the Go ecosystem. 
+  Report existing, public vulnerabilities in public importable packages in the Go ecosystem. 
 title: "x/vulndb: potential Go vuln in <package>"
 labels: "Needs Triage,Direct External Report"
 body:
@@ -9,11 +8,11 @@ body:
     attributes:
       value: |
         Thanks for taking the time to file a vulnerability report!
-        
+
         Use this form only for PUBLIC vulnerabilities in publicly importable Go packages not maintained by the Go Team (i.e., anything outside the Go standard library, Go toolchain, and golang.org modules).
-        
+
         To report undisclosed Go vulnerabilities, please follow our [security policy](https://go.dev/security/policy).
-        
+
         For questions or concerns, do not hesitate to reach out to us directly at security@golang.org.
   - type: input
     id: contact
@@ -51,7 +50,7 @@ body:
     attributes:
       label: Affected Versions
       description: |
-        The package versions (in semver format) affected by this vulnerability. 
+        The package versions (in semver format) affected by this vulnerability.
         Indicate when the vulnerability was introduced and when it was fixed, if known.
       placeholder: |
         Package: github.com/example/module/package
@@ -82,7 +81,7 @@ body:
     attributes:
       label: Does this vulnerability already have an associated CVE ID?
       description: |
-        A CVE IDs is a unique identifier for a vulnerability (see https://cve.mitre.org). 
+        A CVE IDs is a unique identifier for a vulnerability (see https://cve.mitre.org).
         The Go Security team will assign a CVE ID for the vulnerability if it does not already have one.
       multiple: false
       options:
@@ -110,7 +109,7 @@ body:
     attributes:
       label: CWE ID
       description: |
-        [Optional] The CWE ID that best describes the class of vulnerability. 
+        [Optional] The CWE ID that best describes the class of vulnerability.
         See https://cwe.mitre.org/data/definitions/699.html for a list of common types.
   - type: textarea
     id: links
