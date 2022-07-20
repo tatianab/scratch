@@ -42,7 +42,7 @@ body:
       label: Affected Versions
       description: |
         The package versions (in semver format) affected by this vulnerability. 
-        If the vulnerability has always existed in a package, leave the "Introduced" field blank.
+        If the vulnerability has always existed in a package, leave the Introduced field blank.
       value: |
         Package:
         - Introduced: 
