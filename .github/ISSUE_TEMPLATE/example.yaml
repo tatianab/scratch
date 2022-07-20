@@ -1,10 +1,24 @@
 name: Tell us about a public vulnerability in the Go Ecosystem
 description: |
-  Use this form to report existing, public vulnerabilities in public importable packages 
+  Report existing, public vulnerabilities in public importable packages 
   in the Go ecosystem. 
 title: "x/vulndb: potential Go vuln in <package>"
 labels: "Needs Triage,Direct External Report"
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to file a vulnerability report!
+        
+        Use this form only for PUBLIC vulnerabilities in publicly importable Go packages not
+        maintained by the Go Team (i.e., anything outside the Go standard library, Go toolchain, and 
+        golang.org modules).
+        
+        To report undisclosed Go vulnerabilities, please follow our 
+        [security policy](https://go.dev/security/policy).
+        
+        For questions or concerns, do not hesitate to reach out to us directly
+        at security@golang.org.
   - type: input
     id: contact
     attributes:
@@ -43,12 +57,15 @@ body:
       description: |
         The package versions (in semver format) affected by this vulnerability. 
         If the vulnerability has always existed in a package, leave the Introduced field blank.
+        
         Example:
+        ```
           Package: github.com/example/module/package
           - Introduced: 1.2.0
           - Fixed: 1.2.4
           Package: github.com/example/module/v2/package
           - Fixed: 2.4.5
+       ```
       value: |
         Package:
         - Introduced: 
@@ -62,12 +79,15 @@ body:
       label: Affected Symbols
       description: |
         The symbols (function or struct names) affected by this vulnerability.
-        e,g:
+        
+        Example:
+        ```
         Package: github.com/example/module/package
         - aSymbol
         - SomeType.AMethod
         Package: github.com/example/module/v2/package
         - anotherSymbol
+       ```
       value: |
         Package:
           - 
@@ -130,17 +150,3 @@ body:
         Anything else you'd like us to know about this vulnerability?
     validations:
       required: false
-          
- 
-#  - type: textarea
-#    id: symbols
-#    attributes:
-#      label: Affected Symbols
-#      description: |
-#        The symbols (function or struct names) affected by this vulnerability.
-#      placeholder: |
-#        - AFunction
-#        - aType.AMethod
-#      render: markdown
-#   validations:
-#     required: true
