@@ -10,15 +10,11 @@ body:
       value: |
         Thanks for taking the time to file a vulnerability report!
         
-        Use this form only for PUBLIC vulnerabilities in publicly importable Go packages not
-        maintained by the Go Team (i.e., anything outside the Go standard library, Go toolchain, and 
-        golang.org modules).
+        Use this form only for PUBLIC vulnerabilities in publicly importable Go packages not maintained by the Go Team (i.e., anything outside the Go standard library, Go toolchain, and golang.org modules).
         
-        To report undisclosed Go vulnerabilities, please follow our 
-        [security policy](https://go.dev/security/policy).
+        To report undisclosed Go vulnerabilities, please follow our [security policy](https://go.dev/security/policy).
         
-        For questions or concerns, do not hesitate to reach out to us directly
-        at security@golang.org.
+        For questions or concerns, do not hesitate to reach out to us directly at security@golang.org.
   - type: input
     id: contact
     attributes:
@@ -60,6 +56,7 @@ body:
         
                 
         Example:
+        \`
           Package: github.com/example/module/package
           - Introduced: 1.2.0
           - Fixed: 1.2.4
