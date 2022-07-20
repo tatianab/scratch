@@ -50,12 +50,12 @@ body:
   - type: textarea
     id: symbols
     attributes:
-      label: Affected Versions
+      label: Affected Symbols
       description: |
-        The package versions (in semver format) affected by this vulnerability.
+        The symbols (function or struct names) affected by this vulnerability.
       value: |
-        - Introduced:
-          Fixed:
+        - AFunction
+        - aType.AMethod
       render: markdown
     validations:
       required: true
