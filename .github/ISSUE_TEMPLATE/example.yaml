@@ -41,9 +41,9 @@ body:
       label: Affected Versions
       description: |
         The package versions (in semver format) affected by this vulnerability.
-      value: |
-        - Introduced:
-          Fixed:
+      placeholder: |
+        - Introduced: 1.1.0
+          Fixed: 1.8.5
       render: markdown
     validations:
       required: true
@@ -53,7 +53,7 @@ body:
       label: Affected Symbols
       description: |
         The symbols (function or struct names) affected by this vulnerability.
-      value: |
+      placeholder: |
         - AFunction
         - aType.AMethod
       render: markdown
