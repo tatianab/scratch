@@ -42,8 +42,7 @@ body:
       label: Affected Versions
       description: |
         The package versions (in semver format) affected by this vulnerability. 
-        If the vulnerability has always existed, leave the "Introduced" field blank.
-        
+        If the vulnerability has always existed in a package, leave the "Introduced" field blank.
         Example:
           Package: github.com/example/module/package
           - Introduced: 1.2.0
@@ -57,25 +56,25 @@ body:
       render: markdown
     validations:
       required: true
-  - type: textarea
-    id: symbols
-    attributes:
-      label: Affected Symbols
-      description: |
-        The symbols (function or struct names) affected by this vulnerability.
-        
-        Example:
-          Package: github.com/example/module/package
-          - aSymbol
-          - SomeType.AMethod
-          Package: github.com/example/module/v2/package
-          - anotherSymbol
-      placeholder: |
-        - AFunction
-        - SomeType.AMethod
-      render: markdown
-    validations:
-      required: true
+#   - type: textarea
+#     id: symbols
+#     attributes:
+#       label: Affected Symbols
+#       description: |
+#         The symbols (function or struct names) affected by this vulnerability.
+#         e,g:
+#         Package: github.com/example/module/package
+#         - aSymbol
+#         - SomeType.AMethod
+#         Package: github.com/example/module/v2/package
+#         - anotherSymbol
+#       value: |
+#         Package:
+#           - 
+#           - 
+#       render: markdown
+#     validations:
+#       required: true
   - type: dropdown
     id: has-cve
     attributes:
