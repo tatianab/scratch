@@ -35,3 +35,26 @@ body:
       description: A description of the vulnerability.
     validations:
       required: true
+  - type: textarea
+    id: versions
+    attributes:
+      label: Affected Versions
+      description: |
+      The package versions (in semver format) affected by this vulnerability.
+      value: |
+        - Introduced:
+          Fixed:
+      render: markdown
+    validations:
+      required: true
+ - type: textarea
+   id: symbols
+   attributes:
+    label: Affected Symbols
+    description: The symbols (function or struct names) affected by this vulnerability.
+    value: |
+      -
+      -
+    render: markdown
+   validations:
+    required: true
