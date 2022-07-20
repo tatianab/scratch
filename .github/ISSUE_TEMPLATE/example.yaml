@@ -81,32 +81,32 @@ body:
       placeholder: CVE-20XX-NNNN
     validations:
       required: false
-    - type: input
-      id: credit
-      attributes:
-        label: Credit
-        description: |
-          [Optional] The name of the person or organization that discovered or fixed this vulnerability.
-#     - type: textarea
-#       id: links
-#       attributes:
-#         label: References
-#         description: Links to more information about the vulnerability.
-#         value: |
-#           - PR:
-#           - Commit:
-#           - Additional Context:
-#         render: markdown
-#       validations:
-#         required: false
-#     - type: textarea
-#       id: more
-#       attributes:
-#         label: Additional information
-#         description: |
-#           Anything else you'd like us to know about this vulnerability?
-#       validations:
-#         required: false
+  - type: input
+    id: credit
+    attributes:
+      label: Credit
+      description: |
+        [Optional] The name of the person or organization that discovered or fixed this vulnerability.
+  - type: textarea
+    id: links
+    attributes:
+      label: References
+      description: Links to more information about the vulnerability.
+      value: |
+        - PR:
+        - Commit:
+        - Additional Context:
+      render: markdown
+    validations:
+      required: false
+  - type: textarea
+    id: more
+    attributes:
+      label: Additional information
+      description: |
+        Anything else you'd like us to know about this vulnerability?
+    validations:
+      required: false
           
  
 #  - type: textarea
