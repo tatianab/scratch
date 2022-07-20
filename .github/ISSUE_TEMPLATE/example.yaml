@@ -40,7 +40,7 @@ body:
     attributes:
       label: Affected Versions
       description: |
-      The package versions (in semver format) affected by this vulnerability.
+        The package versions (in semver format) affected by this vulnerability.
       value: |
         - Introduced:
           Fixed:
@@ -51,7 +51,8 @@ body:
    id: symbols
    attributes:
     label: Affected Symbols
-    description: The symbols (function or struct names) affected by this vulnerability.
+    description: |
+      The symbols (function or struct names) affected by this vulnerability.
     value: |
       -
       -
