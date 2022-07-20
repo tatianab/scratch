@@ -47,15 +47,15 @@ body:
       render: markdown
     validations:
       required: true
- - type: textarea
-   id: symbols
-   attributes:
-    label: Affected Symbols
-    description: |
-      The symbols (function or struct names) affected by this vulnerability.
-    value: |
-      -
-      -
-    render: markdown
-   validations:
-    required: true
+#  - type: textarea
+#    id: symbols
+#    attributes:
+#     label: Affected Symbols
+#     description: |
+#       The symbols (function or struct names) affected by this vulnerability.
+#     value: |
+#       -
+#       -
+#     render: markdown
+#    validations:
+#     required: true
