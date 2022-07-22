@@ -1,3 +1,6 @@
+# Copyright 2021 The Go Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
 name: Tell us about a public vulnerability in the Go Ecosystem
 description: |
   Report an existing, public vulnerability in a publicly importable package in the Go ecosystem.
@@ -107,10 +110,10 @@ body:
     id: links
     attributes:
       label: References
-      description: Links to more information about the vulnerability (e.g., advisories, reports, issue tracker entries).
-      value: |
-        - 
-        - 
+      description: Links to more information about the vulnerability (e.g., advisories, reports, issue tracker entries, etc).
+      placeholder: |
+        - https://github.com/example/issues/123
+        - https://github.com/advisories/GHSA-abcd-efgh-ijkl
     validations:
       required: false
   - type: textarea
