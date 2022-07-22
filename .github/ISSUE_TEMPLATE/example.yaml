@@ -1,9 +1,6 @@
-# Copyright 2021 The Go Authors. All rights reserved.
-# Use of this source code is governed by a BSD-style
-# license that can be found in the LICENSE file.
 name: Tell us about a public vulnerability in the Go Ecosystem
 description: |
-  Report an existing, public vulnerability in a publicly importable package in the Go ecosystem.
+  Report an existing, public vulnerability in a publicly importable package in the Go ecosystem that is not yet in our database.
 title: "x/vulndb: potential Go vuln in <package>"
 labels: "Needs Triage,Direct External Report"
 body:
@@ -26,11 +23,11 @@ body:
       required: true
   - type: textarea
     id: affected
-    attributes: 
+    attributes:
       label: Affected Modules, Packages, Versions and Symbols
       description: |
         The Go modules, packages, versions, and symbols this vulnerability affects. 
-        
+
         Package versions should be in semver format, and should indicate when the vulnerability was introduced and when it was fixed, if known.
 
         Symbols are functions, methods or structs that may trigger this vulnerability when used.
@@ -43,7 +40,7 @@ body:
         Symbols:
           - aFunction
           - SomeType.AMethod
-            
+
         Module: github.com/example/module
         Package: github.com/example/module/v2/package
         Versions:
