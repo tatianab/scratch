@@ -1,6 +1,6 @@
 name: Tell us about a public vulnerability in the Go Ecosystem
 description: |
-  Report existing, public vulnerabilities in public importable packages in the Go ecosystem. 
+  Report an existing, public vulnerability in a publicly importable package in the Go ecosystem.
 title: "x/vulndb: potential Go vuln in <package>"
 labels: "Needs Triage,Direct External Report"
 body:
@@ -11,33 +11,9 @@ body:
 
         Use this form only for PUBLIC vulnerabilities in publicly importable Go packages not maintained by the Go Team (i.e., anything outside the Go standard library, Go toolchain, and golang.org modules).
 
-        To report undisclosed Go vulnerabilities, please follow our [security policy](https://go.dev/security/policy).
+        ❗ To report undisclosed Go vulnerabilities, please follow our [security policy](https://go.dev/security/policy) instead.
 
         For questions or concerns, do not hesitate to reach out to us directly at security@golang.org.
-  - type: input
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
-    validations:
-      required: false
-  - type: input
-    id: module
-    attributes:
-      label: Module(s)
-      description: The Go module(s) this vulnerability affects, separated by commas.
-      placeholder: github.com/example/module
-    validations:
-      required: true
-  - type: input
-    id: package
-    attributes:
-      label: Package(s)
-      description: The Go package(s) this vulnerability affects, separated by commas. Leave blank if same as module.
-      placeholder: github.com/example/module/package
-    validations:
-      required: false
   - type: textarea
     id: description
     attributes:
@@ -46,32 +22,30 @@ body:
     validations:
       required: true
   - type: textarea
-    id: versions
-    attributes:
-      label: Affected Versions
+    id: affected
+    attributes: 
+      label: Affected Modules, Packages, Versions and Symbols
       description: |
-        The package versions (in semver format) affected by this vulnerability.
-        Indicate when the vulnerability was introduced and when it was fixed, if known.
-      placeholder: |
+        The Go modules, packages, versions, and symbols this vulnerability affects. 
+        
+        Package versions should be in semver format, and should indicate when the vulnerability was introduced and when it was fixed, if known.
+
+        Symbols are functions, methods or structs that may trigger this vulnerability when used.
+      value: |
+        Module: github.com/example/module
         Package: github.com/example/module/package
+        Versions:
           - Introduced: 1.2.0
           - Fixed: 1.2.4
-        Package: github.com/example/module/v2/package
-          - Fixed: 2.4.5
-      render: shell
-    validations:
-      required: true
-  - type: textarea
-    id: symbols
-    attributes:
-      label: Affected Symbols
-      description: |
-        The symbols (function or struct names) affected by this vulnerability.
-      placeholder: |
-        Package: github.com/example/module/package
+        Symbols:
           - aFunction
           - SomeType.AMethod
+            
+        Module: github.com/example/module
         Package: github.com/example/module/v2/package
+        Versions:
+          - Fixed: 2.4.5
+        Symbols:
           - anotherFunction
       render: shell
     validations:
@@ -81,20 +55,20 @@ body:
     attributes:
       label: Does this vulnerability already have an associated CVE ID?
       description: |
-        A CVE IDs is a unique identifier for a vulnerability (see https://cve.mitre.org).
+        A CVE ID is a unique identifier for a vulnerability (see https://cve.mitre.org).
         The Go Security team will assign a CVE ID for the vulnerability if it does not already have one.
       multiple: false
       options:
       - "Yes"
       - "No"
-      - "Unknown"
+      - "I'm not sure"
     validations:
       required: true
   - type: input
     id: cve
     attributes:
       label: CVE ID
-      description: The CVE ID for this vulnerability. Leave blank if none exists.
+      description: If you selected "Yes" in the previous question, please include the CVE ID below.
       placeholder: CVE-20XX-NNNN
     validations:
       required: false
@@ -111,16 +85,32 @@ body:
       description: |
         [Optional] The CWE ID that best describes the class of vulnerability.
         See https://cwe.mitre.org/data/definitions/699.html for a list of common types.
+  - type: input
+    id: pr
+    attributes:
+      label: Pull Request
+      description: |
+        The pull request(s) that fixed this vulnerability, if known.
+      placeholder: https://github.com/example/pull/123
+    validations:
+      required: false
+  - type: input
+    id: commit
+    attributes:
+      label: Commit
+      description: |
+        The commit(s) that fixed this vulnerability, if known.
+      placeholder: https://github.com/example/commit/abcdef
+    validations:
+      required: false
   - type: textarea
     id: links
     attributes:
       label: References
-      description: Links to more information about the vulnerability.
+      description: Links to more information about the vulnerability (e.g., advisories, reports, issue tracker entries).
       value: |
-        - PR:
-        - Commit:
-        - Additional Context:
-      render: markdown
+        - 
+        - 
     validations:
       required: false
   - type: textarea
