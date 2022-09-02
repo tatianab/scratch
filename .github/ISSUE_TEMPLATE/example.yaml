@@ -1,15 +1,18 @@
 name: Tell us about a public vulnerability in the Go Ecosystem
 description: |
-  Report an existing, public vulnerability in a publicly importable package in the Go ecosystem that is not yet in our database.
+  Report an existing, public vulnerability in a publicly
+  importable package in the Go ecosystem that is not yet in our database.
 title: "x/vulndb: potential Go vuln in <package>"
-labels: "Needs Triage,Direct External Report"
+labels: ["Needs Triage","Direct External Report"]
 body:
   - type: markdown
     attributes:
       value: |
         Thanks for taking the time to file a vulnerability report!
 
-        Use this form only for PUBLIC vulnerabilities in publicly importable Go packages not maintained by the Go Team (i.e., anything outside the Go standard library, Go toolchain, and golang.org modules).
+        Use this form only for PUBLIC vulnerabilities in publicly
+        importable
+        Go packages not maintained by the Go Team (i.e., anything outside the Go standard library, Go toolchain, and golang.org modules).
 
         ❗ To report undisclosed Go vulnerabilities, please follow our [security policy](https://go.dev/security/policy) instead.
 
