@@ -1,22 +1,31 @@
-name: Tell us about a public vulnerability in the Go Ecosystem
+name: Tell us about a public vulnerability in the Go ecosystem
 description: |
-  Report an existing, public vulnerability in a publicly
-  importable package in the Go ecosystem that is not yet in our database.
+  Report an existing, public vulnerability in a publicly importable package in the Go ecosystem that is not yet in our database.
 title: "x/vulndb: potential Go vuln in <package>"
 labels: ["Needs Triage","Direct External Report"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to file a vulnerability report!
+        Thanks for taking the time to file a vulnerability report to the
+        Go vulnerability database!
 
-        Use this form only for PUBLIC vulnerabilities in publicly
-        importable
-        Go packages not maintained by the Go Team (i.e., anything outside the Go standard library, Go toolchain, and golang.org modules).
+        Filling out this form creates a **public** issue on the x/vulndb issue tracker containing all the details you report. 
+        
+        It is intended only for PUBLIC vulnerabilities in publicly importable Go packages not maintained by the Go Team (i.e., anything outside the Go standard library, Go toolchain, and golang.org modules).
+
+        Please report all issues directly to project maintainers
+        following their security policy **before** creating an issue here.
 
         ❗ To report undisclosed Go vulnerabilities, please follow our [security policy](https://go.dev/security/policy) instead.
 
         For questions or concerns, do not hesitate to reach out to us directly at security@golang.org.
+  - type: checkboxes
+    attributes:
+      label: Acknowledgement
+      options:
+        - label: I am a maintainer of the affected project OR I have already reported this vulnerability directly to the maintainer(s) of the affected project.
+          required: true 
   - type: textarea
     id: description
     attributes:
@@ -29,9 +38,9 @@ body:
     attributes:
       label: Affected Modules, Packages, Versions and Symbols
       description: |
-        The Go modules, packages, versions, and symbols this vulnerability affects. 
+        The Go modules, packages, versions, and symbols this vulnerability affects.
 
-        Package versions should be in semver format, and should indicate when the vulnerability was introduced and when it was fixed, if known.
+        Package versions should be in semver format, and should indicate when the vulnerability was introduced and when it was fixed, if known. If there are multiple fixed (or introduced) versions for the same package, list them all.
 
         Symbols are functions, methods or structs that may trigger this vulnerability when used.
       value: |
@@ -44,7 +53,7 @@ body:
           - aFunction
           - SomeType.AMethod
 
-        Module: github.com/example/module
+        Module: github.com/example/module/v2
         Package: github.com/example/module/v2/package
         Versions:
           - Fixed: 2.4.5
@@ -70,40 +79,18 @@ body:
   - type: input
     id: cve
     attributes:
-      label: CVE ID
-      description: If you selected "Yes" in the previous question, please include the CVE ID below.
-      placeholder: CVE-20XX-NNNN
+      label: CVE/GHSA ID
+      description: List any CVE or GHSA IDs already associated with this vulnerability.
+      placeholder: CVE-20XX-NNNN, GHSA-xxxx-yyyy-zzzz
     validations:
       required: false
-  - type: input
-    id: credit
-    attributes:
-      label: Credit
-      description: |
-        [Optional] The name of the person or organization that discovered or fixed this vulnerability.
-  - type: input
-    id: cwe
-    attributes:
-      label: CWE ID
-      description: |
-        [Optional] The CWE ID that best describes the class of vulnerability.
-        See https://cwe.mitre.org/data/definitions/699.html for a list of common types.
   - type: input
     id: pr
     attributes:
-      label: Pull Request
+      label: Fix Commit or Pull Request
       description: |
-        The pull request(s) that fixed this vulnerability, if known.
+        The pull request(s) or commit(s) that fixed this vulnerability, if known.
       placeholder: https://github.com/example/pull/123
-    validations:
-      required: false
-  - type: input
-    id: commit
-    attributes:
-      label: Commit
-      description: |
-        The commit(s) that fixed this vulnerability, if known.
-      placeholder: https://github.com/example/commit/abcdef
     validations:
       required: false
   - type: textarea
